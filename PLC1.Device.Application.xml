@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Symbolconfiguration xmlns="http://www.3s-software.com/schemas/Symbolconfiguration.xsd">
+  <Header>
+    <Version>3.5.14.0</Version>
+    <SymbolConfigObject version="3.5.15.30" runtimeid="3.5.15.40" libversion="3.5.15.20" compiler="3.5.15.40" lmm="3.5.15.0" profile="CODESYS V3.5 SP15 Patch 4+" settings="SupportOPCUA, LayoutCalculator=OptimizedClientSideLayoutCalculator" />
+    <ProjectInfo name="PLC1" devicename="Device" appname="Application" />
+  </Header>
+  <TypeList>
+    <TypeSimple name="T_BOOL" size="1" swapsize="0" typeclass="Bool" iecname="BOOL" />
+    <TypeSimple name="T_INT" size="2" swapsize="2" typeclass="Int" iecname="INT" />
+    <TypeSimple name="T_STRING" size="81" swapsize="0" typeclass="String" iecname="STRING" />
+  </TypeList>
+  <NodeList>
+    <Node name="Application">
+      <Node name="DB_Alias">
+        <Node name="b_simulateIO" type="T_BOOL" access="ReadWrite" />
+        <Node name="ix_boxMagazineEmpty" type="T_BOOL" access="ReadWrite" />
+        <Node name="ix_driveError" type="T_BOOL" access="ReadWrite" />
+        <Node name="ix_driveHomed" type="T_BOOL" access="ReadWrite" />
+        <Node name="ix_driveReady" type="T_BOOL" access="ReadWrite" />
+        <Node name="ix_E_stop" type="T_BOOL" access="ReadWrite" />
+        <Node name="ix_feedCylinderInitPos" type="T_BOOL" access="ReadWrite" />
+        <Node name="ix_foldingMechanismInitPos" type="T_BOOL" access="ReadWrite" />
+        <Node name="ix_iReserve" type="T_BOOL" access="ReadWrite" />
+        <Node name="ix_panelPushbttnReset" type="T_BOOL" access="ReadWrite" />
+        <Node name="ix_panelPushbttnStart" type="T_BOOL" access="ReadWrite" />
+        <Node name="ix_panelPushbttnStop" type="T_BOOL" access="ReadWrite" />
+        <Node name="ix_panelSwitchAutoMan" type="T_BOOL" access="ReadWrite" />
+        <Node name="ix_sensorConveyorEind" type="T_BOOL" access="ReadWrite" />
+        <Node name="ix_sensorConveyorMid" type="T_BOOL" access="ReadWrite" />
+        <Node name="ix_sensorConveyorStart" type="T_BOOL" access="ReadWrite" />
+        <Node name="ix_setupCylinderInitPos" type="T_BOOL" access="ReadWrite" />
+        <Node name="ix_workpieceAvailable" type="T_BOOL" access="ReadWrite" />
+        <Node name="ix_ZAxisBottom" type="T_BOOL" access="ReadWrite" />
+        <Node name="ix_ZAxisMid" type="T_BOOL" access="ReadWrite" />
+        <Node name="ix_ZAxisTop" type="T_BOOL" access="ReadWrite" />
+        <Node name="qx_advanceFeedCylinder" type="T_BOOL" access="ReadWrite" />
+        <Node name="qx_advanceFoldingMechanism" type="T_BOOL" access="ReadWrite" />
+        <Node name="qx_advanceLockCylinder" type="T_BOOL" access="ReadWrite" />
+        <Node name="qx_advanceSetupCylinder" type="T_BOOL" access="ReadWrite" />
+        <Node name="qx_advIntermedCylinder" type="T_BOOL" access="ReadWrite" />
+        <Node name="qx_conveyorForward" type="T_BOOL" access="ReadWrite" />
+        <Node name="qx_conveyorReverse" type="T_BOOL" access="ReadWrite" />
+        <Node name="qx_openGripper" type="T_BOOL" access="ReadWrite" />
+        <Node name="qx_oReserve" type="T_BOOL" access="ReadWrite" />
+        <Node name="qx_qReserve" type="T_BOOL" access="ReadWrite" />
+        <Node name="qx_retractStopper" type="T_BOOL" access="ReadWrite" />
+        <Node name="qx_XAxisDrive_Bit0" type="T_BOOL" access="ReadWrite" />
+        <Node name="qx_XAxisDrive_Bit1" type="T_BOOL" access="ReadWrite" />
+        <Node name="qx_XAxisEnable" type="T_BOOL" access="ReadWrite" />
+        <Node name="qx_XAxisStartMovement" type="T_BOOL" access="ReadWrite" />
+        <Node name="qx_ZAxisAdvance" type="T_BOOL" access="ReadWrite" />
+      </Node>
+      <Node name="GVL">
+        <Node name="b_simulatie" type="T_BOOL" access="ReadWrite" />
+        <Node name="b_StartPRG" type="T_BOOL" access="ReadWrite" />
+        <Node name="b_StopPRG" type="T_BOOL" access="ReadWrite" />
+        <Node name="ModusAUTO" type="T_BOOL" access="ReadWrite" />
+        <Node name="ModusHAND" type="T_BOOL" access="ReadWrite" />
+      </Node>
+      <Node name="POU">
+        <Node name="Foutcode" type="T_STRING" access="ReadWrite" />
+        <Node name="PRGStep" type="T_INT" access="ReadWrite" />
+      </Node>
+    </Node>
+  </NodeList>
+</Symbolconfiguration>
