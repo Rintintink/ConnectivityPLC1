@@ -2,13 +2,46 @@
 <Symbolconfiguration xmlns="http://www.3s-software.com/schemas/Symbolconfiguration.xsd">
   <Header>
     <Version>3.5.14.0</Version>
-    <SymbolConfigObject version="3.5.15.30" runtimeid="3.5.15.40" libversion="3.5.15.20" compiler="3.5.15.40" lmm="3.5.15.0" profile="CODESYS V3.5 SP15 Patch 4+" settings="SupportOPCUA, LayoutCalculator=OptimizedClientSideLayoutCalculator" />
+    <SymbolConfigObject version="3.5.15.30" runtimeid="3.5.7.20" libversion="3.5.15.20" compiler="3.5.15.40" lmm="3.5.15.0" profile="CODESYS V3.5 SP15 Patch 4+" settings="SupportOPCUA, LayoutCalculator=OptimizedClientSideLayoutCalculator" />
     <ProjectInfo name="PLC1" devicename="Device" appname="Application" />
   </Header>
   <TypeList>
     <TypeSimple name="T_BOOL" size="1" swapsize="0" typeclass="Bool" iecname="BOOL" />
+    <TypeSimple name="T_DINT" size="4" swapsize="4" typeclass="DInt" iecname="DINT" />
     <TypeSimple name="T_INT" size="2" swapsize="2" typeclass="Int" iecname="INT" />
-    <TypeSimple name="T_STRING" size="81" swapsize="0" typeclass="String" iecname="STRING" />
+    <TypeSimple name="T_STRING_20_" size="21" swapsize="0" typeclass="String" iecname="STRING(20)" />
+    <TypeSimple name="T_TIME" size="4" swapsize="4" typeclass="Time" iecname="TIME" />
+    <TypeUserDef name="T_R_TRIG" size="2" nativesize="8" typeclass="Userdef" pouclass="FUNCTION_BLOCK" iecname="R_TRIG">
+      <UserDefElement iecname="CLK" type="T_BOOL" byteoffset="0" vartype="VAR_INPUT" />
+      <UserDefElement iecname="Q" type="T_BOOL" byteoffset="1" vartype="VAR_OUTPUT" />
+    </TypeUserDef>
+    <TypeUserDef name="T_TON" size="16" nativesize="28" typeclass="Userdef" pouclass="FUNCTION_BLOCK" iecname="TON">
+      <UserDefElement iecname="IN" type="T_BOOL" byteoffset="0" vartype="VAR_INPUT" />
+      <UserDefElement iecname="PT" type="T_TIME" byteoffset="4" vartype="VAR_INPUT" />
+      <UserDefElement iecname="Q" type="T_BOOL" byteoffset="8" vartype="VAR_OUTPUT" />
+      <UserDefElement iecname="ET" type="T_TIME" byteoffset="12" vartype="VAR_OUTPUT" />
+    </TypeUserDef>
+    <TypeUserDef name="T_TP" size="16" nativesize="24" typeclass="Userdef" pouclass="FUNCTION_BLOCK" iecname="TP">
+      <UserDefElement iecname="IN" type="T_BOOL" byteoffset="0" vartype="VAR_INPUT" />
+      <UserDefElement iecname="PT" type="T_TIME" byteoffset="4" vartype="VAR_INPUT" />
+      <UserDefElement iecname="Q" type="T_BOOL" byteoffset="8" vartype="VAR_OUTPUT" />
+      <UserDefElement iecname="ET" type="T_TIME" byteoffset="12" vartype="VAR_OUTPUT" />
+    </TypeUserDef>
+    <TypeUserDef name="T_FB_Counters" size="79" nativesize="160" typeclass="Userdef" pouclass="FUNCTION_BLOCK" iecname="FB_Counters">
+      <UserDefElement iecname="t_timerLow" type="T_TP" byteoffset="0" vartype="VAR" />
+      <UserDefElement iecname="t_timerHigh" type="T_TON" byteoffset="16" vartype="VAR" />
+      <UserDefElement iecname="b_eenHzClock" type="T_BOOL" byteoffset="32" vartype="VAR" />
+      <UserDefElement iecname="b_productieTimerActief" type="T_BOOL" byteoffset="33" vartype="VAR" />
+      <UserDefElement iecname="i_productieTimerSec" type="T_DINT" byteoffset="36" vartype="VAR" />
+      <UserDefElement iecname="i_productieTimerMin" type="T_DINT" byteoffset="40" vartype="VAR" />
+      <UserDefElement iecname="i_productieTimerHr" type="T_DINT" byteoffset="44" vartype="VAR" />
+      <UserDefElement iecname="s_tijdFormatted" type="T_STRING_20_" byteoffset="48" vartype="VAR" />
+      <UserDefElement iecname="b_pTrigProductieTeller" type="T_R_TRIG" byteoffset="69" vartype="VAR" />
+      <UserDefElement iecname="b_pTrigType1" type="T_R_TRIG" byteoffset="71" vartype="VAR" />
+      <UserDefElement iecname="b_pTrigType2" type="T_R_TRIG" byteoffset="73" vartype="VAR" />
+      <UserDefElement iecname="b_pTrigType3" type="T_R_TRIG" byteoffset="75" vartype="VAR" />
+      <UserDefElement iecname="b_pTrigType4" type="T_R_TRIG" byteoffset="77" vartype="VAR" />
+    </TypeUserDef>
   </TypeList>
   <NodeList>
     <Node name="Application">
@@ -52,14 +85,13 @@
         <Node name="qx_ZAxisAdvance" type="T_BOOL" access="ReadWrite" />
       </Node>
       <Node name="GVL">
-        <Node name="b_simulatie" type="T_BOOL" access="ReadWrite" />
         <Node name="b_StartPRG" type="T_BOOL" access="ReadWrite" />
         <Node name="b_StopPRG" type="T_BOOL" access="ReadWrite" />
+        <Node name="FB_Counters" type="T_FB_Counters" access="ReadWrite" />
         <Node name="ModusAUTO" type="T_BOOL" access="ReadWrite" />
         <Node name="ModusHAND" type="T_BOOL" access="ReadWrite" />
       </Node>
       <Node name="POU">
-        <Node name="Foutcode" type="T_STRING" access="ReadWrite" />
         <Node name="PRGStep" type="T_INT" access="ReadWrite" />
       </Node>
     </Node>
