@@ -2,7 +2,7 @@
 <Symbolconfiguration xmlns="http://www.3s-software.com/schemas/Symbolconfiguration.xsd">
   <Header>
     <Version>3.5.14.0</Version>
-    <SymbolConfigObject version="3.5.15.30" runtimeid="3.5.7.20" libversion="3.5.15.20" compiler="3.5.15.40" lmm="3.5.15.0" profile="CODESYS V3.5 SP15 Patch 4+" settings="SupportOPCUA, LayoutCalculator=OptimizedClientSideLayoutCalculator" />
+    <SymbolConfigObject version="3.5.15.30" runtimeid="3.5.15.40" libversion="3.5.15.20" compiler="3.5.15.40" lmm="3.5.15.0" profile="CODESYS V3.5 SP15 Patch 4+" settings="SupportOPCUA, LayoutCalculator=OptimizedClientSideLayoutCalculator" />
     <ProjectInfo name="PLC1" devicename="Device" appname="Application" />
   </Header>
   <TypeList>
@@ -76,7 +76,6 @@
         <Node name="qx_conveyorReverse" type="T_BOOL" access="ReadWrite" />
         <Node name="qx_openGripper" type="T_BOOL" access="ReadWrite" />
         <Node name="qx_oReserve" type="T_BOOL" access="ReadWrite" />
-        <Node name="qx_qReserve" type="T_BOOL" access="ReadWrite" />
         <Node name="qx_retractStopper" type="T_BOOL" access="ReadWrite" />
         <Node name="qx_XAxisDrive_Bit0" type="T_BOOL" access="ReadWrite" />
         <Node name="qx_XAxisDrive_Bit1" type="T_BOOL" access="ReadWrite" />
