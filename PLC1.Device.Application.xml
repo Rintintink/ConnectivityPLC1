@@ -90,7 +90,7 @@
         <Node name="ModusAUTO" type="T_BOOL" access="ReadWrite" />
         <Node name="ModusHAND" type="T_BOOL" access="ReadWrite" />
       </Node>
-      <Node name="POU">
+      <Node name="MAIN">
         <Node name="PRGStep" type="T_INT" access="ReadWrite" />
       </Node>
     </Node>
