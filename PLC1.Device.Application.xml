@@ -76,6 +76,7 @@
         <Node name="qx_conveyorReverse" type="T_BOOL" access="ReadWrite" />
         <Node name="qx_openGripper" type="T_BOOL" access="ReadWrite" />
         <Node name="qx_oReserve" type="T_BOOL" access="ReadWrite" />
+        <Node name="qx_Reserve" type="T_BOOL" access="ReadWrite" />
         <Node name="qx_retractStopper" type="T_BOOL" access="ReadWrite" />
         <Node name="qx_XAxisDrive_Bit0" type="T_BOOL" access="ReadWrite" />
         <Node name="qx_XAxisDrive_Bit1" type="T_BOOL" access="ReadWrite" />
@@ -92,7 +93,6 @@
         <Node name="PRG1_Step" type="T_INT" access="ReadWrite" />
         <Node name="t_stap130timer" type="T_TON" access="ReadWrite" />
         <Node name="t_stap150timer" type="T_TON" access="ReadWrite" />
-        <Node name="t_stap30timer" type="T_TON" access="ReadWrite" />
         <Node name="t_stap40timer" type="T_TON" access="ReadWrite" />
         <Node name="t_stap50timer" type="T_TON" access="ReadWrite" />
         <Node name="t_stap70timer" type="T_TON" access="ReadWrite" />
