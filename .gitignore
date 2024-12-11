@@ -2,6 +2,9 @@
 *.log
 *.compileinfo
 
+# CodeSYS-optie bestanden
+*.opt 
+
 # Gebruikersspecifieke instellingen
 .settings/
 *.user
