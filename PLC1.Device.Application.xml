@@ -2,7 +2,7 @@
 <Symbolconfiguration xmlns="http://www.3s-software.com/schemas/Symbolconfiguration.xsd">
   <Header>
     <Version>3.5.14.0</Version>
-    <SymbolConfigObject version="3.5.15.30" runtimeid="3.5.7.20" libversion="3.5.15.20" compiler="3.5.15.40" lmm="3.5.15.0" profile="CODESYS V3.5 SP15 Patch 4+" settings="SupportOPCUA, LayoutCalculator=OptimizedClientSideLayoutCalculator" />
+    <SymbolConfigObject version="3.5.15.30" runtimeid="3.5.15.40" libversion="3.5.15.20" compiler="3.5.15.40" lmm="3.5.15.0" profile="CODESYS V3.5 SP15 Patch 4+" settings="SupportOPCUA, LayoutCalculator=OptimizedClientSideLayoutCalculator" />
     <ProjectInfo name="PLC1" devicename="Device" appname="Application" />
   </Header>
   <TypeList>
@@ -11,6 +11,35 @@
     <TypeSimple name="T_INT" size="2" swapsize="2" typeclass="Int" iecname="INT" />
     <TypeSimple name="T_STRING_20_" size="21" swapsize="0" typeclass="String" iecname="STRING(20)" />
     <TypeSimple name="T_TIME" size="4" swapsize="4" typeclass="Time" iecname="TIME" />
+    <TypeUserDef name="T_FB_SCADA" size="58" nativesize="64" typeclass="Userdef" pouclass="FUNCTION_BLOCK" iecname="FB_SCADA">
+      <UserDefElement iecname="SCADA_ALM1000" type="T_BOOL" byteoffset="0" vartype="VAR" />
+      <UserDefElement iecname="SCADA_ALM1001" type="T_BOOL" byteoffset="1" vartype="VAR" />
+      <UserDefElement iecname="SCADA_ALM1002" type="T_BOOL" byteoffset="2" vartype="VAR" />
+      <UserDefElement iecname="SCADA_ALM1003" type="T_BOOL" byteoffset="3" vartype="VAR" />
+      <UserDefElement iecname="SCADA_ALM1004" type="T_BOOL" byteoffset="4" vartype="VAR" />
+      <UserDefElement iecname="SCADA_ALM1005" type="T_BOOL" byteoffset="5" vartype="VAR" />
+      <UserDefElement iecname="SCADA_ALM1006" type="T_BOOL" byteoffset="6" vartype="VAR" />
+      <UserDefElement iecname="SCADA_ALM1007" type="T_BOOL" byteoffset="7" vartype="VAR" />
+      <UserDefElement iecname="SCADA_ALM1008" type="T_BOOL" byteoffset="8" vartype="VAR" />
+      <UserDefElement iecname="SCADA_ALM1009" type="T_BOOL" byteoffset="9" vartype="VAR" />
+      <UserDefElement iecname="SCADA_productType1" type="T_INT" byteoffset="10" vartype="VAR" />
+      <UserDefElement iecname="SCADA_productType2" type="T_INT" byteoffset="12" vartype="VAR" />
+      <UserDefElement iecname="SCADA_productType3" type="T_INT" byteoffset="14" vartype="VAR" />
+      <UserDefElement iecname="SCADA_productType4" type="T_INT" byteoffset="16" vartype="VAR" />
+      <UserDefElement iecname="Sc_startKnop" type="T_BOOL" byteoffset="18" vartype="VAR" />
+      <UserDefElement iecname="Sc_stopKnop" type="T_BOOL" byteoffset="19" vartype="VAR" />
+      <UserDefElement iecname="Sc_resetKnop" type="T_BOOL" byteoffset="20" vartype="VAR" />
+      <UserDefElement iecname="Sc_simuleer" type="T_BOOL" byteoffset="21" vartype="VAR" />
+      <UserDefElement iecname="Sc_E_Stop" type="T_BOOL" byteoffset="22" vartype="VAR" />
+      <UserDefElement iecname="Sc_ModusHAND" type="T_BOOL" byteoffset="23" vartype="VAR" />
+      <UserDefElement iecname="Sc_ManualInstructie" type="T_INT" byteoffset="24" vartype="VAR" />
+      <UserDefElement iecname="Sc_Running" type="T_BOOL" byteoffset="26" vartype="VAR" />
+      <UserDefElement iecname="Sc_currentState" type="T_INT" byteoffset="28" vartype="VAR" />
+      <UserDefElement iecname="Sc_X_actief" type="T_BOOL" byteoffset="30" vartype="VAR" />
+      <UserDefElement iecname="Sc_X_target" type="T_INT" byteoffset="32" vartype="VAR" />
+      <UserDefElement iecname="Sc_productieTijd" type="T_STRING_20_" byteoffset="34" vartype="VAR" />
+      <UserDefElement iecname="Sc_i_productType" type="T_INT" byteoffset="56" vartype="VAR" />
+    </TypeUserDef>
     <TypeUserDef name="T_R_TRIG" size="2" nativesize="8" typeclass="Userdef" pouclass="FUNCTION_BLOCK" iecname="R_TRIG">
       <UserDefElement iecname="CLK" type="T_BOOL" byteoffset="0" vartype="VAR_INPUT" />
       <UserDefElement iecname="Q" type="T_BOOL" byteoffset="1" vartype="VAR_OUTPUT" />
@@ -99,9 +128,9 @@
         <Node name="t_stap90timer" type="T_TON" access="ReadWrite" />
       </Node>
       <Node name="GVL">
+        <Node name="b_ModusHAND" type="T_BOOL" access="ReadWrite" />
         <Node name="FB_Counters" type="T_FB_Counters" access="ReadWrite" />
-        <Node name="ModusAUTO" type="T_BOOL" access="ReadWrite" />
-        <Node name="ModusHAND" type="T_BOOL" access="ReadWrite" />
+        <Node name="FB_SCADA" type="T_FB_SCADA" access="ReadWrite" />
       </Node>
     </Node>
   </NodeList>
