@@ -8,8 +8,6 @@
   <TypeList>
     <TypeSimple name="T_BOOL" size="1" swapsize="0" typeclass="Bool" iecname="BOOL" />
     <TypeSimple name="T_INT" size="2" swapsize="2" typeclass="Int" iecname="INT" />
-    <TypeSimple name="T_REAL" size="4" swapsize="4" typeclass="Real" iecname="REAL" />
-    <TypeSimple name="T_STRING" size="81" swapsize="0" typeclass="String" iecname="STRING" />
     <TypeSimple name="T_STRING_20_" size="21" swapsize="0" typeclass="String" iecname="STRING(20)" />
     <TypeSimple name="T_TIME" size="4" swapsize="4" typeclass="Time" iecname="TIME" />
     <TypeUserDef name="T_FB_Counters" size="21" nativesize="160" typeclass="Userdef" pouclass="FUNCTION_BLOCK" iecname="FB_Counters">
@@ -50,18 +48,6 @@
       <UserDefElement iecname="Q" type="T_BOOL" byteoffset="8" vartype="VAR_OUTPUT" />
       <UserDefElement iecname="ET" type="T_TIME" byteoffset="12" vartype="VAR_OUTPUT" />
     </TypeUserDef>
-    <TypeUserDef name="T_UDT" size="99" nativesize="100" typeclass="Userdef" pouclass="STRUCTURE" iecname="UDT">
-      <UserDefElement iecname="ProductType" type="T_INT" byteoffset="0" vartype="VAR" />
-      <UserDefElement iecname="Color" type="T_STRING" byteoffset="2" vartype="VAR" />
-      <UserDefElement iecname="Position" type="T_INT" byteoffset="84" vartype="VAR" />
-      <UserDefElement iecname="Height" type="T_REAL" byteoffset="88" vartype="VAR" />
-      <UserDefElement iecname="Weight" type="T_REAL" byteoffset="92" vartype="VAR" />
-      <UserDefElement iecname="Storage_Location" type="T_INT" byteoffset="96" vartype="VAR" />
-      <UserDefElement iecname="Used" type="T_BOOL" byteoffset="98" vartype="VAR" />
-    </TypeUserDef>
-    <TypeArray name="T_ARRAY__0__100__OF_UDT" size="10100" nativesize="10100" typeclass="Array" iecname="ARRAY [0..100] OF UDT" basetype="T_UDT">
-      <ArrayDim minrange="0" maxrange="100" />
-    </TypeArray>
   </TypeList>
   <NodeList>
     <Node name="Application">
@@ -114,12 +100,10 @@
         <Node name="t_stap130timer" type="T_TON" access="ReadWrite" />
         <Node name="t_stap150timer" type="T_TON" access="ReadWrite" />
         <Node name="t_stap40timer" type="T_TON" access="ReadWrite" />
-        <Node name="t_stap50timer" type="T_TON" access="ReadWrite" />
         <Node name="t_stap70timer" type="T_TON" access="ReadWrite" />
         <Node name="t_stap90timer" type="T_TON" access="ReadWrite" />
       </Node>
       <Node name="GVL">
-        <Node name="blockje" type="T_ARRAY__0__100__OF_UDT" access="ReadWrite" />
         <Node name="FB_Counters" type="T_FB_Counters" access="ReadWrite" />
         <Node name="FB_SCADA" type="T_FB_SCADA" access="ReadWrite" />
       </Node>
