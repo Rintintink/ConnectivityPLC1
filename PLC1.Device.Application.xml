@@ -90,7 +90,7 @@
         <Node name="qx_XAxisStartMovement" type="T_BOOL" access="ReadWrite" />
         <Node name="qx_ZAxisAdvance" type="T_BOOL" access="ReadWrite" />
       </Node>
-      <Node name="DB_PRG1">
+      <Node name="DB_PRG">
         <Node name="b_packageType" type="T_BOOL" access="ReadWrite" />
         <Node name="i_conveyorSetpoint" type="T_INT" access="ReadWrite" />
         <Node name="i_conveyorStatus" type="T_INT" access="ReadWrite" />
